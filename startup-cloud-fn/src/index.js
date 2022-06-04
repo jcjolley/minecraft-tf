@@ -49,7 +49,7 @@ const startServer = async (req, res) => {
       console.log("Status checking script loaded")
       let doneBy
       const fetchStatus = async () => {
-        const url = "${process.env.SERVER_STATUS_CLOUD_FN_URL}" //https://us-central1-abstract-code-308212.cloudfunctions.net/get-server-status
+        const url = "${process.env.SERVER_STATUS_CLOUD_FN_URL}"
         console.log("Fetching status")
         const response = await fetch(url)
         if (response.ok) {
