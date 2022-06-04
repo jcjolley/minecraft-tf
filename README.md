@@ -8,3 +8,5 @@ In a bash terminal, run ./setup.sh to get started.
 
 ## NOTE
 There are still some things hard coded that shouldn't be hard coded
+
+General Setup: ![image](https://user-images.githubusercontent.com/2086176/172013784-a3dd5301-9418-453e-8879-879bba9cc9d9.png)
