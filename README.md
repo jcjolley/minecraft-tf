@@ -9,9 +9,11 @@ In a bash terminal, run ./setup.sh to get started.
 ## NOTE
 There are still some things hard coded that shouldn't be hard coded
 
-General Setup: ![image](https://user-images.githubusercontent.com/2086176/172014347-7acbb56b-5058-4cff-8979-f209072931bd.png)
 
 # Architecture 
+
+![image](https://user-images.githubusercontent.com/2086176/172014347-7acbb56b-5058-4cff-8979-f209072931bd.png)
+
 ## Cloud functions: 
 ### Get Server Status
 This function checks if the server is up or not, and if it's up, reports how many players are currently connected.
