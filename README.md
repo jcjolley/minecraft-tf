@@ -9,4 +9,4 @@ In a bash terminal, run ./setup.sh to get started.
 ## NOTE
 There are still some things hard coded that shouldn't be hard coded
 
-General Setup: ![image](https://user-images.githubusercontent.com/2086176/172014088-0083f138-0f4d-43bf-885b-98f2e16f7a28.png)
+General Setup: ![image](https://user-images.githubusercontent.com/2086176/172014347-7acbb56b-5058-4cff-8979-f209072931bd.png)
