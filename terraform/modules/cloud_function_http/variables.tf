@@ -37,3 +37,8 @@ variable "service_account_email" {
   type        = string
   description = "the service account email to run as"
 }
+
+variable "billing_group" {
+  type        = string
+  description = "The label you want to use to group costs for this server"
+}

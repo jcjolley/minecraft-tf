@@ -1,13 +1,18 @@
 locals {
-  domain = "jolley-minecraft.com."
+  short_name = trimsuffix(var.domain, ".")
+  friendly_name = replace(local.short_name, ".", "-")
 }
+
 resource "google_dns_managed_zone" "default" {
-  name     = "jolley-minecraft-com"
-  dns_name = local.domain
+  name     = local.friendly_name
+  dns_name = var.domain
+  labels = {
+    billing_group = var.billing_group
+  }
 }
 
 resource "google_dns_record_set" "root_a" {
-  name = substr(local.domain, 0, -1)
+  name = var.domain
   type = "A"
   ttl  = 300
 
@@ -17,7 +22,7 @@ resource "google_dns_record_set" "root_a" {
 }
 
 resource "google_dns_record_set" "subdomain_a" {
-  name = substr("${var.suffix}.${google_dns_managed_zone.default.dns_name}", 0, -1)
+  name = "${var.suffix}.${google_dns_managed_zone.default.dns_name}"
   type = "A"
   ttl  = 300
 
@@ -27,7 +32,7 @@ resource "google_dns_record_set" "subdomain_a" {
 }
 
 data "google_dns_record_set" "soa" {
-  name = local.domain
+  name = var.domain
   type = "SOA"
   // ttl          = 21600
   managed_zone = google_dns_managed_zone.default.name
@@ -35,7 +40,7 @@ data "google_dns_record_set" "soa" {
 }
 
 data "google_dns_record_set" "ns" {
-  name = local.domain
+  name = var.domain
   type = "NS"
   // ttl          = 21600
   managed_zone = google_dns_managed_zone.default.name
@@ -50,5 +55,5 @@ data "google_dns_record_set" "ns" {
 }
 
 output "domain" {
-  value = substr("${var.suffix}.${google_dns_managed_zone.default.dns_name}", 0, -1)
+  value = "${var.suffix}.${local.short_name}"
 }

@@ -17,3 +17,8 @@ variable "project_id" {
   type        = string
   description = "the project id"
 }
+
+variable "billing_group" {
+  type        = string
+  description = "The label you want to use to group costs for this server"
+}

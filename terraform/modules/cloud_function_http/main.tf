@@ -1,6 +1,9 @@
 resource "google_storage_bucket" "default" {
   name     = "${var.name}-src-bucket"
   location = "US"
+  labels = {
+    "billing_group" = var.billing_group
+  }
 }
 
 data "archive_file" "default" {
@@ -27,6 +30,9 @@ resource "google_cloudfunctions_function" "default" {
   entry_point           = var.entry_point
   environment_variables = var.environment_variables
   service_account_email = var.service_account_email
+  labels = {
+    billing_group = var.billing_group
+  }
 }
 
 

@@ -19,3 +19,8 @@ variable "machine_type" {
   description = "The instance size to use"
   default     = "c2-standard-8"
 }
+
+variable "billing_group" {
+  type        = string
+  description = "The label you want to use to group costs for this server"
+}

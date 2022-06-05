@@ -5,9 +5,10 @@ provider "google" {
 }
 
 module "minecraft-one-eighteen" {
-  source     = "./modules/minecraft"
-  suffix     = "one-eighteen"
-  domain     = "one.eighteen.jolley-minecraft.com"
-  zone       = "us-central1-a"
-  project_id = "abstract-code-308212"
+  source        = "./modules/minecraft"
+  suffix        = "one-eighteen"
+  domain        = "jolley-minecraft.com."
+  zone          = "us-central1-a"
+  project_id    = "abstract-code-308212"
+  billing_group = "one_eighteen_minecraft"
 }

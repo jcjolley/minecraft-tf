@@ -17,6 +17,12 @@ resource "google_compute_resource_policy" "default" {
       max_retention_days    = 2
       on_source_disk_delete = "KEEP_AUTO_SNAPSHOTS"
     }
+
+    snapshot_properties {
+      labels = {
+        "billing_group" = var.billing_group
+      }
+    }
   }
 }
 
@@ -25,6 +31,9 @@ resource "google_compute_disk" "default" {
   type  = "pd-ssd"
   zone  = "us-central1-a"
   image = "ubuntu-os-cloud/ubuntu-2204-jammy-v20220506"
+  labels = {
+    "billing_group" = var.billing_group
+  }
 }
 
 resource "google_compute_disk_resource_policy_attachment" "attachment" {
@@ -35,7 +44,7 @@ resource "google_compute_disk_resource_policy_attachment" "attachment" {
 
 resource "google_compute_instance" "default" {
   name                      = "minecraft-${var.name_suffix}-server"
-  machine_type              = "c2-standard-8"
+  machine_type              = var.machine_type
   zone                      = "us-central1-a"
   allow_stopping_for_update = true
 
@@ -54,6 +63,11 @@ resource "google_compute_instance" "default" {
   }
 
   tags = ["minecraft-server"]
+
+
+  labels = {
+    "billing_group" = var.billing_group
+  }
 
   metadata = {
     shutdown-script = var.shutdown_script
