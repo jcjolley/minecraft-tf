@@ -31,3 +31,6 @@ The SSD has a daily backup schedule that keeps the last 3 days state so that if 
 
 # Scripts
 ![image](https://user-images.githubusercontent.com/2086176/172058481-e1d93a31-293b-4b2a-bdc3-aad8e0f524f8.png)
+
+# Terraform
+![image](https://user-images.githubusercontent.com/2086176/172058685-470f2e24-67cd-42c0-a290-12e3925d9a12.png)
