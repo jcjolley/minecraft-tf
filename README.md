@@ -12,7 +12,7 @@ There are still some things hard coded that shouldn't be hard coded
 
 # Architecture 
 
-![image](https://user-images.githubusercontent.com/2086176/172014347-7acbb56b-5058-4cff-8979-f209072931bd.png)
+![image](https://user-images.githubusercontent.com/2086176/172054722-a920470e-2a24-4d19-a9e3-3037513515ee.png)
 
 ## Cloud functions: 
 ### Get Server Status
