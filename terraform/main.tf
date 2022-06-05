@@ -11,4 +11,5 @@ module "minecraft-one-eighteen" {
   zone          = "us-central1-a"
   project_id    = "abstract-code-308212"
   billing_group = "one_eighteen_minecraft"
+  compute_instance_machine_type = "c2-standard-8"
 }
