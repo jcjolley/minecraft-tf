@@ -28,3 +28,6 @@ This function starts the compute instance and returns an HTML page that polls ge
 ## Compute Instance
 This is a premptibe compute instance with an SSD attached.
 The SSD has a daily backup schedule that keeps the last 3 days state so that if something goes wrong and you play frequently enough, you can restore the server
+
+# Scripts
+![image](https://user-images.githubusercontent.com/2086176/172058481-e1d93a31-293b-4b2a-bdc3-aad8e0f524f8.png)
